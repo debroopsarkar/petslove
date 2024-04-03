@@ -1,0 +1,175 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #f7f1f0;
+}
+.h2{
+    text-align: center;
+    font-size: 20px;
+}
+.sec1{
+    width: 100%;
+}
+.content{
+    display: flex;
+    gap: 30px;
+    margin-top: 50px;
+    
+}
+.para{
+    margin-top: 2em;
+    margin-bottom: 4em;
+    text-align: center;
+    font-weight: normal;
+}
+.hero2{
+    background-image: url("https://images.squarespace-cdn.com/content/v1/5ce82d5d7cff9a0001025c64/1565807255959-35NCTDVOIYJET5Y1ESVV/HankPortrait1.jpg");
+    color: black;
+    background-color: black;
+    background-position: center;
+    background-size: cover;
+    height: 30em;
+    position: relative;
+    
+    
+}
+
+.heading {
+    margin-top: 2em;
+    padding-top: .5em;
+}
+
+.title{
+    margin-left: 10px;
+    margin-top: 100px;
+    font-size: 70px;
+    font-weight: bold;
+    color: aliceblue;
+}
+.inner{
+    margin-left: 50px;
+    color: aliceblue;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.btn1{
+    margin-left: 100px;
+    margin-top: 30px;
+    font-size: 25px;
+    padding: 25px;
+    margin-bottom: 150px;
+}
+
+.navbar-brand {
+    font-size: 2.5em;
+}
+
+.navbar-nav {
+    font-size: 1.25em;
+    
+}
+
+.nav-item {
+    margin-left: 1em;
+    
+}
+
+.nav-item button {
+    font-size: 1.5em;
+}
+
+.nav-item button a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-item button a:hover {
+    color: whitesmoke;
+}
+
+footer {
+    margin-top: 2em;
+    height: 15em;
+    background-color: #eec4bc;
+}
+
+footer h1 {
+    margin-top: 1em;
+    margin-bottom: .5em;
+    margin-left: .2em;
+}
+
+footer span {
+    margin: .5em;
+}
+
+.link1, .link2 {
+    margin-top: 2em;
+    color: darkgreen;
+} 
+
+.get {
+    text-decoration: none;
+    color: white;
+}
+
+/* Register a Pet */
+
+.register-form {
+    border: solid 1px black;
+    width: 50%;
+    padding: 3em;
+    margin-left: 40em;
+
+}
+
+.form input,textarea {
+    line-height: 2.5;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 10px 0;
+  }
+
+.form button {
+    padding: 20px 25px;
+    background-color: #E9A799;
+    display: inline;
+    border-color: #E9A799;
+    border-width: 0;
+}
+    .form button:hover {
+    background-color: #C79288;
+}
+
+.register-form h1 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.regPet {
+    float: left;
+    padding-left: 2%;
+    margin-left: 5em;
+    margin-top: 4em;
+  }
+  #regPet {
+    font-family: "Nunito Sans";
+    margin: auto;
+    margin-top: 5%;
+    text-align: center;
+  }
+  .regPet {
+    text-align: left;
+    width: 30%;
+  }
+  .regPet h2 {
+    font-size: 2.5rem;
+  }
+  .regPet h4 {
+    font-size: 1.25rem;
+  }
