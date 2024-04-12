@@ -1,10 +1,10 @@
 <?php
 
 // Connect to the database
-$host = 'localhost';
-$username = 'root';
-$password = '';
-$dbname = 'pet_registration';
+$host = 'jdbc:mysql://sql6.freesqldatabase.com:3306/sql6698495';
+$username = 'sql6698495';
+$password = 'Q8Cm2zjE3a';
+$dbname = 'sql6698495';
 
 $conn = new mysqli($host, $username, $password, $dbname);
 
@@ -22,7 +22,7 @@ if ($conn->connect_error) {
 } else {
     // Insert the data into the database
     
-    $stmt = $conn->prepare("INSERT INTO pets (owner_name, pet_name, pet_type, pet_age, mobile, days, message) VALUES (?,?,?,?,?,?,?)");
+    $stmt = $conn->prepare("INSERT INTO register (owner_name, pet_name, pet_type, pet_age, mobile, days, message) VALUES (?,?,?,?,?,?,?)");
     $stmt->bind_param("sssiiis", $owner_name, $pet_name, $pet_type, $pet_age, $mobile, $days, $message);
 
     $execval = $stmt->execute();
