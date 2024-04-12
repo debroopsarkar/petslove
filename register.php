@@ -5,8 +5,9 @@ $host = 'sql6.freesqldatabase.com';
 $username = 'sql6698495';
 $password = 'Q8Cm2zjE3a';
 $dbname = 'sql6698495';
+$port = "3306";
 
-$conn = new mysqli($host, $username, $password, $dbname);
+$conn = new mysqli($host, $username, $password, $dbname, $port);
 
 // Get the form data
 $owner_name = $_POST['owner_name'];
