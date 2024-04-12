@@ -1,0 +1,15 @@
+CREATE DATABASE petslove;
+
+USE petslove;
+
+CREATE TABLE register (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  owner_name VARCHAR(50) NOT NULL,
+  pet_name VARCHAR(50) NOT NULL,
+  pet_type VARCHAR(50) NOT NULL,
+  pet_age INT NOT NULL,
+  mobile BIGINT NOT NULL,
+  days INT NOT NULL,
+  message TEXT NOT NULL,
+  registration_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
