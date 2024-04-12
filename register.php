@@ -7,7 +7,7 @@ $password = 'Q8Cm2zjE3a';
 $dbname = 'sql6698495';
 
 
-$conn = new mysqli($host, $username, $password, $dbname, $port);
+$conn = new mysqli($host, $username, $password, $dbname);
 
 // Get the form data
 $owner_name = $_POST['owner_name'];
