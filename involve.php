@@ -4,9 +4,10 @@ $hostname = "sql6.freesqldatabase.com";
 $username = "sql6698495";
 $password = "Q8Cm2zjE3a";
 $database = "sql6698495";
+$port = "3306";
 
 // Create connection
-$conn = new mysqli($hostname, $username, $password, $database);
+$conn = new mysqli($hostname, $username, $password, $database, $port);
 
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
