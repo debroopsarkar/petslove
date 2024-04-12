@@ -1,11 +1,11 @@
 <?php
 
 // Connect to the database
-$host = 'sql6.freesqldatabase.com';
+$host = 'sql6.freesqldatabase.com:3306';
 $username = 'sql6698495';
 $password = 'Q8Cm2zjE3a';
 $dbname = 'sql6698495';
-$port = "3306";
+
 
 $conn = new mysqli($host, $username, $password, $dbname, $port);
 
