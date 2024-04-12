@@ -1,7 +1,7 @@
 <?php
 
 // Connect to the database
-$host = 'jdbc:mysql://sql6.freesqldatabase.com:3306/sql6698495';
+$host = 'sql6.freesqldatabase.com';
 $username = 'sql6698495';
 $password = 'Q8Cm2zjE3a';
 $dbname = 'sql6698495';
