@@ -1,34 +1,78 @@
 <?php
-// Database connection parameters
-$hostname = "sql6.freesqldatabase.com:3306";
-$username = "sql6698495";
-$password = "Q8Cm2zjE3a";
-$database = "sql6698495";
+$uri = "mysql://avnadmin:AVNS_p_bkkF4fvf3VC_DABG3@mysql-2086d7d1-petslove.b.aivencloud.com:24228/defaultdb?ssl-mode=REQUIRED";
 
+$fields = parse_url($uri);
+
+// build the DSN including SSL settings
+$conn = "mysql:";
+$conn .= "host=" . $fields["host"];
+$conn .= ";port=" . $fields["port"];;
+$conn .= ";dbname=defaultdb";
+$conn .= ";sslmode=verify-ca;sslrootcert=ca.pem";
 
 // Create connection
-$conn = new mysqli($hostname, $username, $password, $database, $port);
+
+// Get the form data
+
+try {
+    $db = new PDO($conn, $fields["user"], $fields["pass"]);
+
+    $stmt = $db->prepare("INSERT INTO register (owner_name, pet_name, pet_type, pet_age, mobile, days, message) VALUES (?, ?, ?, ?, ?, ?, ?)");
+
+    $owner_name = filter_var($_POST['first-name'], FILTER_SANITIZE_STRING);
+    $pet_name = filter_var($_POST['pet-name'], FILTER_SANITIZE_STRING);
+    $pet_type = filter_var($_POST['pet-type'], FILTER_SANITIZE_STRING);
+    $pet_age = filter_var($_POST['pet-age'], FILTER_SANITIZE_NUMBER_INT);
+    $mobile = filter_var($_POST['mobile'], FILTER_SANITIZE_NUMBER_INT);
+    $days = filter_var($_POST['days'], FILTER_SANITIZE_NUMBER_INT);
+    $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+
+    $execval = $stmt->execute([$owner_name, $pet_name, $pet_type, $pet_age, $mobile, $days, $message]);
+
+    if ($execval) {
+      echo "Registration successful...";
+    } 
+    print($stmt->fetch()[0]);
+  } catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+  }
+?>
+
+
+<?php
+$uri = "mysql://avnadmin:AVNS_p_bkkF4fvf3VC_DABG3@mysql-2086d7d1-petslove.b.aivencloud.com:24228/defaultdb?ssl-mode=REQUIRED";
+
+$fields = parse_url($uri);
+
+// build the DSN including SSL settings
+$conn = "mysql:";
+$conn .= "host=" . $fields["host"];
+$conn .= ";port=" . $fields["port"];;
+$conn .= ";dbname=defaultdb";
+$conn .= ";sslmode=verify-ca;sslrootcert=ca.pem";
 
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
 $email = $_POST['email'];
 $message = $_POST['message'];
 // Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}else{
+try {
+    $db = new PDO($conn, $fields["user"], $fields["pass"]);
 
-// Insert data into the database
-    $stmt = $conn->prepare("INSERT INTO involvement (first_name, last_name, email, message) VALUES (?,?,?,?)");
-    $stmt->bind_param('ssss', $first_name, $last_name, $email, $message);
-    $execval = $stmt->execute();
+    $stmt = $db->prepare("INSERT INTO register (first_name, last_name, email, message) VALUES (?, ?, ?, ?)");
+
+    $owner_name = filter_var($_POST['first_name'], FILTER_SANITIZE_STRING);
+    $pet_name = filter_var($_POST['last_name'], FILTER_SANITIZE_STRING);
+    $pet_type = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
+    $message = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+
+    $execval = $stmt->execute([$owner_name, $pet_name, $pet_type, $pet_age, $mobile, $days, $message]);
+
     if ($execval) {
-        echo "Registration successful...";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
-    $stmt->close();
-    $conn->close();
-
-
-}
+      echo "Registration successful...";
+    } 
+    print($stmt->fetch()[0]);
+  } catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+  }
+?>
